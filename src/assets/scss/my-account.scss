@@ -1,0 +1,14 @@
+.business-license-img {
+  max-height: 300px;
+  object-fit: contain;
+}
+.my-account__user-name{
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+}
+@media (max-width: 576px){
+  .license-img-mobile{
+    max-width: 320px;
+  }
+}

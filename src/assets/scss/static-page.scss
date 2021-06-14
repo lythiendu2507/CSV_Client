@@ -1,0 +1,44 @@
+.list-group{
+    padding-left: 2rem;
+    list-style-type: circle;
+}
+
+.upper-roman-list {
+    list-style-type: upper-roman;
+}
+.lower-roman-list {
+    list-style-type: lower-roman;
+}
+.decimal-list {
+    list-style-type: decimal;
+    counter-reset: item;
+}
+.decimal-list-item {
+    display: block;
+
+    &::before {
+        content: counters(item, ".") " ";
+        counter-increment: item
+    }
+
+    p {
+        padding: 0;
+        margin: 0;
+    }
+}
+.decimal-list-bold{
+    .decimal-list-item {
+        font-weight: bold;
+
+        .list-content {
+            font-weight: normal;
+        }
+    }
+
+}
+.lower-alpha-list {
+    list-style-type: lower-alpha;
+}
+.list-content {
+    margin: 0.5rem 0 0 1rem;
+}

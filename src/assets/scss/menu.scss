@@ -1,0 +1,129 @@
+.main-menu {
+  ul,
+  ol {
+    list-style: none;
+  }
+  &:hover .container-menu {
+    display: block !important;
+  }
+
+  .container-menu {
+    width: 300px;
+    position: absolute;
+    top: 51px;
+    left: 0;
+    padding: 10px 0;
+    display: none;
+    z-index: 10;
+    background-color: var(--white);
+    border-radius: 5px;
+
+    .menu-item {
+      display: flex;
+      padding: 2px 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f4faff;
+      }
+
+      &:hover .sub-menu {
+        display: inline-block !important;
+      }
+      &:hover .item-link {
+        color: $primary !important;
+      }
+      // &::after {
+      //   content: "\e90e";
+      //   color: var(--gray);
+      //   font-size: 10px;
+      //   position: absolute;
+      //   right: 8px;
+      //   margin: 1px 0 0 0;
+      // }
+
+      .item-title {
+        display: flex;
+        align-items: center;
+        padding: 5px 0;
+
+        .menu-icon {
+          padding-right: 5px;
+        }
+        .item-link {
+          color: $gray-900;
+          font-size: 14px;
+        }
+      }
+
+      .sub-menu {
+        position: absolute;
+        z-index: 11;
+        top: 0;
+        left: 300px;
+        display: none;
+        width: 350px;
+        border-radius: 5px;
+        background-color: var(--white);
+        height: auto;
+        max-height: 450px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        word-wrap: break-word;
+
+        .sub-menu-item {
+          padding: 5px 10px;
+
+          &:hover {
+            background-color: #f4faff;
+          }
+
+          &:hover .sub-item-link {
+            color: $primary !important;
+          }
+
+          .sub-item-link {
+            color: $gray-900;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.pathology-menu {
+  max-height: 450px;
+  overflow-y: scroll;
+}
+
+.dropdown.dropdown-nav:hover > .dropdown-menu {
+  display: block !important;
+  width: auto;
+  padding: 10px;
+  height: auto;
+}
+
+.dropdown-menu-mobile {
+  left: -250%;
+}
+
+.hottag-button {
+  background-color: $secondary;
+  border-radius: 15px;
+  color: $primary;
+  padding: 2px 10px;
+  margin-right: 10px;
+  font-size: 15px;
+  font-weight: 700;
+
+  &:hover {
+    background-color: white;
+    color: $primary;
+  }
+
+  &.active {
+    background-color: white;
+    color: $primary;
+  }
+}

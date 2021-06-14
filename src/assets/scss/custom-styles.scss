@@ -1,0 +1,82 @@
+@import './common/setting.scss';
+@import './application.scss';
+
+@import './header.scss';
+@import './menu.scss';
+@import './footer.scss';
+@import './home.scss';
+
+@import './news.scss';
+@import './productdetail.scss';
+
+@import './loading.scss';
+@import './menu.scss';
+@import './static-page.scss';
+@import './product-card.scss';
+@import './checkout.scss';
+@import './my-orders.scss';
+@import './my-account.scss';
+@import './coupon.scss';
+@import './search-bar.scss';
+@import './active-message.scss';
+
+button {
+  background-color: transparent;
+  border: none;
+}
+//Chat
+.theme-background-color {
+  background-color: #35409a !important;
+}
+
+.slick-slide {
+  > div {
+    height: 100%;
+
+    > div {
+      height: 100%;
+    }
+  }
+}
+
+.banner__img {
+  display: flex;
+  justify-content: center;
+  position: static;
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1270px;
+  }
+}
+
+.product .product__image {
+  background-position: inherit;
+}
+
+.cart-item__qty {
+  max-width: 9.25em;
+}
+
+.cart-item-img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+}
+
+.cart-item__name {
+  -webkit-line-clamp: 2;
+  text-transform: initial;
+}
+#onesignal-bell-container.onesignal-reset.onesignal-bell-container-bottom-right {
+  bottom: 140px !important;
+  right: 11px !important;
+  z-index: 1900000000 !important;
+  // 2147483000
+  // 2000000000!important
+}

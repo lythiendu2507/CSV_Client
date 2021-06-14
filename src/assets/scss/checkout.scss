@@ -1,0 +1,96 @@
+.promo-coupon {
+  $circle-size: 20px;
+  $half-circle-size: $circle-size / 2;
+  $half-circle-bg: #f4f7fc;
+
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  &__name-container {
+    border: 1px solid $primary;
+    border-right: none;
+    border-radius: $half-circle-size 0 0 $half-circle-size;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: white;
+  }
+
+  &__name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: bold;
+  }
+
+  &__amount {
+    font-size: 14px;
+  }
+
+  &__unapply-btn {
+    border: 1px solid $primary;
+    border-left: 1px dashed $primary;
+    border-radius: 0 $half-circle-size $half-circle-size 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    white-space: nowrap;
+    color: $primary;
+    background: white;
+    transition: background-color 0.2s;
+    position: relative;
+    height: 100%;
+
+    &:hover {
+      background-color: adjust-color($primary, $alpha: -0.8);
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: $circle-size;
+      height: $circle-size;
+      border: 1px solid #2f3b97;
+      border-radius: $half-circle-size;
+      position: absolute;
+      left: -$half-circle-size;
+      top: -$half-circle-size;
+      background: $half-circle-bg;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: $circle-size;
+      height: $circle-size;
+      border: 1px solid #2f3b97;
+      border-radius: $half-circle-size;
+      position: absolute;
+      left: -$half-circle-size;
+      bottom: -$half-circle-size;
+      background: $half-circle-bg;
+    }
+  }
+}
+
+.change-delivery-info-btn {
+  top: 0;
+  right: 0;
+}
+
+.bank-info {
+  display: grid;
+  grid-template-columns: max-content auto;
+  row-gap: 4px;
+}
+
+.delivery-address-content {
+  display: grid;
+  grid-template-columns: max-content auto;
+  column-gap: 14px;
+  row-gap: 5px;
+  font-size: 14px;
+}
