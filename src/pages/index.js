@@ -8,8 +8,8 @@ import { ApolloClient, InMemoryCache, ApolloProvider, useApolloClient, defaultOp
 import Products from './products/index'
 import { GET_PRODUCTSTYPE } from '../graphql/getTypeProducts/getTypeProducts'
 import { GET_PRODUCTS } from '../graphql/getProducts/getProducts';
-
-export default function Home(productstype) {
+import TypeProduct from '../components/Modules/TypeProduct/TypeProduct'
+export default function Home(props) {
 
   const apolloClient = new ApolloClient({
     uri: 'http://localhost:4000/graphql',
@@ -17,22 +17,23 @@ export default function Home(productstype) {
     defaultOptions: defaultOptions
 
   })
-
+  console.log(props.data);
   
   return (
+    
     <ApolloProvider client={apolloClient}>
 
       <MainLayout maxWidth="sm" className="products__products" />
       {/* <Products/> */}
-
-      {productstype.productstype.producttypes.map((product) => (
+      <TypeProduct props={props}/>
+      {props.data.products.map((product) => (
         <Link href={`/products/${product.id}`}>
           <Card key={product.id}>
 
             <Typography component="h2">
               {product.name}
             </Typography>
-            <Typography component="h2">
+            {/* <Typography component="h2">
               {product.products.map((t)=>(
                 <Link href={`/products/${t.id}`}>
                   <Card key={toString.id}>
@@ -45,7 +46,7 @@ export default function Home(productstype) {
                       </Card>
                       </Link>
               ))}
-            </Typography>
+            </Typography> */}
           </Card>
         </Link>
       ))}
@@ -70,18 +71,18 @@ export default function Home(productstype) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const client = new ApolloClient({
     uri: 'http://localhost:4000/graphql',
     cache: new InMemoryCache()
   })
 
-  const { data } = await client.query({
-    query: GET_PRODUCTSTYPE
-  })
+  
+  const { data } = await client.query([
+    {query: GET_PRODUCTS},
+    {query: GET_PRODUCTSTYPE}
+  ])
   return {
-    props: {
-      productstype: data
-    }
+    props: data
   }
 }

@@ -2,6 +2,7 @@ import Header from '../Layout/Header'
 import { useMediaQuery } from '@material-ui/core';
 import MobileNavbar from './Navbar/MobileNavbar'
 import React from 'react';
+import TypeProduct from './TypeProduct/TypeProduct';
 
 
 export default function MainLayout(props) {
@@ -18,19 +19,3 @@ export default function MainLayout(props) {
     );
 }
 
-export const mainLayoutNamespacesRequired = [
-    'searchBar',
-    'noti',
-    'navbar',
-    'header',
-    'footer',
-    'common',
-    'errors',
-    'login',
-    'register',
-    'password',
-    'termPopup',
-    'promotions',
-    'myAccount',
-    'cart'
-];

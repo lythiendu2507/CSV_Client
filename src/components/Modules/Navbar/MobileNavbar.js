@@ -2,6 +2,7 @@ import React from 'react'
 import TypeProduct from '../TypeProduct/TypeProduct'
 
 export default function MobileNavbar() {
+
     return (
         <>
             <header class="sc-fjdhpX mobile-topnav">
@@ -12,7 +13,6 @@ export default function MobileNavbar() {
                     </a>
                 </div>
             </header>
-            <TypeProduct/>
             <div className="toolbar-container" >
                 <span className="tab">
 
