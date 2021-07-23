@@ -1,22 +1,88 @@
-@media (max-width: 575.98px)
+@media (max-width: 800px)
 {
     .tpm-form{
-        background-color: aqua;
+        
         width: 100%;
-        height: 150px;
+        height: 208px;
         color: aqua;
-        margin-top: 40px;
+        margin-top: 50px;
+        display: flex;
+        background: rgb(255, 255, 255);
+        z-index: 2;
+        overflow-x: auto;     
     }
+    .img-tp-m{
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+    }
+    .span-tp-m {
+        display: block;
+        font-size: 11px;
+        line-height: 16px;
+        color: rgb(36, 36, 36); }
+    .item-tp-m {
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            padding: 12px 8px;
+            width: 22vw;
+            height: 104px; }
+   
 }
 
-@media (min-width: 1200px)
+@media (min-width: 810px)
 {
     .tp-form
     {
-        background-color: yellow;
+        margin-top: 15px;
+        background: rgb(255, 255, 255);
         width: 100%;
         height: 200px;
         margin-top: 1rem;
-        color: aqua;
+        color: rgb(36, 36, 36);;
     }
+    .item-tp {
+        text-align: center;
+        display: block;
+        text-decoration: none;
+        padding: 12px 8px;
+        width: 22vw;
+        height: 104px; }
+        .img-tp{
+            width: 70px;
+            height: 70px;
+            border-radius: 4px;
+        }
+}
+
+.tp{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    padding: 12px 8px;
+    width: 22vw;
+    height: 104px;
+}
+.tpm-form-deep
+{
+display: flex;
+flex-direction: column;
+-webkit-box-align: stretch;
+align-items: stretch;
+}
+.tpm-form-row
+{
+    display: flex;
+}
+
+.title-typeproduct {
+    font-size: 17px;
+    margin: 25px 0px 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.41;
+    letter-spacing: normal;
+    color: rgb(34, 34, 34);
 }
