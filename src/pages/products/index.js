@@ -30,7 +30,7 @@ const Products = ({ products }) => {
                     <Typography component="h2">
                       {product.name}
                     </Typography><Typography component="h2">
-                      {product.price}
+                      {product.old_price}
                     </Typography>
                   </Card>
                 </Link>

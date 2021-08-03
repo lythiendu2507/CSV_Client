@@ -8,7 +8,7 @@ export const GET_PRODUCT = gql `
         {
             id
             name
-            price
+            old_price
         }
     }
 `

@@ -1,10 +1,10 @@
 .footer {
-  background: $blue3;
+  background: rgb(255, 78, 34);
   color: #fff;
   padding-top: 6em;
   position: relative;
   .text-primary {
-    color: $secondary !important;
+    color: $blue3 !important;
   }
   &:before {
     height: 2rem;
@@ -12,13 +12,13 @@
     right: 0;
     top: 0;
     position: absolute;
-    background-color: $secondary;
+    background-color: $blue3;
     content: '';
   }
 }
 .footer__header {
   text-transform: uppercase;
-  color: $secondary;
+  color: $blue3;
   font-weight: bold;
 }
 .footer__info-title {
@@ -40,7 +40,7 @@
   width: fit-content;
 }
 .footer__link:hover {
-  color: $secondary;
+  color: $blue3;
 }
 .footer__link--email {
   // border-right: 1px solid rgba(145, 154, 163, 0.822);
@@ -71,7 +71,7 @@
   color: white;
 }
 .footer__icon--email {
-  background: #dc4e41;
+  background: $blue3;
 }
 .footer__app {
   position: relative;
@@ -173,7 +173,3 @@
   width: 2.3em;
   height: 2.3em;
 }
-
-// .theme-background-color {
-//   background-color: $secondary !important;
-// }

@@ -1,15 +1,16 @@
 import Head from 'next/head'
 import React, { useState } from 'react';
+import Footer from '../components/Modules/Layout/Footer';
 import Link from 'next/link'
-import { Card, Typography, Container } from '@material-ui/core';
-import styles from '../styles/Home.module.css'
+import { Card, Typography, Container, IconButton} from '@material-ui/core';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+
 import MainLayout from '../components/Modules/MainLayout'
 import { ApolloClient, InMemoryCache, ApolloProvider, useApolloClient, defaultOptions, useQuery } from '@apollo/client'
 
 import { GET_PRODUCTS } from '../graphql/getProducts/getProducts';
 import TypeProduct from '../components/Modules/TypeProduct/TypeProduct'
 import SlickSlider from 'react-slick';
-import Slider from "react-slick";
 export default function Home({ products }) {
 
   const apolloClient = new ApolloClient({
@@ -21,10 +22,8 @@ export default function Home({ products }) {
   const [imgBanner, setImgBanner] = useState([
     { img: "/img/meme1.jpg" },
     { img: "/img/meme4.jpg" },
-    { img: "/img/meme5.jpg" },
     { img: "/img/beaver1.jpg" },
-    { img: "/img/meme2.jpg" },
-    { img: "/img/meme3.jpg" }]);
+    { img: "/icon/logo.png" }]);
  
   return (
 
@@ -76,10 +75,12 @@ export default function Home({ products }) {
                         </Typography>
                         <Typography component="h2">
                           <div className="color-price-product mt-1">
-                            {product.price} đ
-                          </div>
-                          
+                            {product.sale_price} đ
+                          </div> 
                         </Typography>
+                        <IconButton aria-label="add to favorites">
+                            <FavoriteIcon />
+                        </IconButton>
                       </Card>
                     </Link>
                   ))}
@@ -90,7 +91,7 @@ export default function Home({ products }) {
         </div>
       </Container>
 
-
+      <Footer/>
     </ApolloProvider>
   )
 }

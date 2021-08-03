@@ -4,7 +4,9 @@ import {gql} from '@apollo/client'
 export const productCardQueryProps = `
   id
   name
-  price`
+  old_price
+  sale_price
+  `
 
 
 export const GET_PRODUCTS = gql `

@@ -12,7 +12,7 @@ query getTypeProducts{
             products{
                  id
                  name
-                 price
+                 old_price
       }
         }
 }

@@ -8,7 +8,6 @@ import {GET_PRODUCTS} from '../../graphql/getProducts/getProducts'
 import {GET_PRODUCT} from '../../graphql/getProducts/getProduct.query'
 
 const Products = ({product}) => {
-  console.log(product)
     return (
         <MainLayout>
 
