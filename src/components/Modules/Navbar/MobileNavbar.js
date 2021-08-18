@@ -1,5 +1,13 @@
 import React from 'react'
 import TypeProduct from '../TypeProduct/TypeProduct'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import AddIcon from '@material-ui/icons/Add';
+import SearchIcon from '@material-ui/icons/Search';
+import HomeIcon from '@material-ui/icons/Home';
+import FiberNewIcon from '@material-ui/icons/FiberNew';
+import EventNoteIcon from '@material-ui/icons/EventNote';
+import SaveIcon from '@material-ui/icons/Save';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 
 export default function MobileNavbar() {
 
@@ -15,30 +23,24 @@ export default function MobileNavbar() {
             </header>
             <div className="toolbar-container" >
                 <span className="tab">
-
-                    <span className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill  fa-home">
-                    </span>
+                    <HomeIcon className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill  fa-home"/>                 
                     <p className="text">Trang chủ</p>
                 </span>
                 <span className="tab">
-                    <span className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill fas fa-clipboard-check">
-                    </span>
+                    <SaveIcon className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill fas fa-clipboard-check"/>                   
                     <p className="text">Đã lưu</p>
                 </span>
                 <span className="tab">
-                    <span className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill fas fa-clipboard-check">
-                    </span>
+                    <AccountCircleIcon className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill fas fa-clipboard-check"/>                   
                     <p className="text">Tài khoản</p>
                 </span>
                 <span className="tab">
-                    <span className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill far fa-bell">
-
-                    </span>
+                    <NotificationsIcon className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill far fa-bell"/>             
                     <p className="text">Thông báo</p>
                 </span>
                 <span className="tab">
-                    <span className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill fas fa-bars">
-                    </span>
+                    <AddIcon className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill fas fa-bars"/>
+                    
                     <p className="text">Thêm</p>
                 </span>
             </div>

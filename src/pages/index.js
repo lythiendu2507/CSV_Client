@@ -67,7 +67,7 @@ export default function Home({ products }) {
                 <div className="px-2 px-sm-0 mb-2"></div>
                 <div className=" products__cards mb-3 text-center pb-5 pt-5">
                   {products.products.map((product) => (
-                    <Link href={`/products/${product.id}`}>
+                    <Link className="fa-border" href={`/products/${product.id}`}>
                       <Card key={product.id}>
                         <img alt="/img/meme1.jpg" src="/img/meme1.jpg"/>
                         <Typography component="h2" className="mt-1">

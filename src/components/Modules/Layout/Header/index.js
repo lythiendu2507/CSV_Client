@@ -88,7 +88,7 @@ const Header = () => {
                 </div>
                 <div className="pc-header-search-item2">
                     <div className="pc-header-search-item2-1">
-                        <a className="pc-header-search-item2-a">
+                        <a  href= "/Login" className="pc-header-search-item2-a">
                             <AccountCircleIcon className=""/>
                             <span className="pc-header-search-item2-span"> Đăng Nhập</span>
                         </a>
@@ -97,7 +97,7 @@ const Header = () => {
                 <div className="pc-header-search-item3">
                 <div>
                 <div className="pc-header-search-item2-2">
-                        <a className="pc-header-search-item2-a">
+                        <a  href= "/Register" className="pc-header-search-item2-a">
                             <AddIcon className=""/>
                             <span className="pc-header-search-item2-span"> Đăng ký</span>
                         </a>

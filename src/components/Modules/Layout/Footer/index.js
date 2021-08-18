@@ -69,7 +69,7 @@ export default function Footer() {
                                 <p className="d-flex align-items-center">
                                 <i className="fa fa-phone footer__icon footer__icon--email" />
                                     <a className="text-white pl-2 mr-2" href="tel:1900232436">
-                                        1900232436
+                                        0982111344
                                     </a>
                                 </p>
                                 <p className="d-flex align-items-center">

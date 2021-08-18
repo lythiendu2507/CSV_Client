@@ -13304,7 +13304,7 @@ abbr[title] {
     padding-top: 2px;
     padding-bottom: constant(safe-area-inset-bottom);
     padding-bottom: env(safe-area-inset-bottom);
-    height: 50px;
+    height: 44px;
     font-size: 16px;
 }
 .toolbar-container .tab {
@@ -13316,7 +13316,8 @@ abbr[title] {
   display: block;
   text-align: center;
   margin: 0;
-  height: 44px;
+  height: 64px;
+  margin-top: 15px;
 }
 
 .toolbar-container .toolbar-iconfont {
