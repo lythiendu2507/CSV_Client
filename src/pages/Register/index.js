@@ -1,10 +1,16 @@
-import React from 'react'
+import {useState} from 'react'
 import MainLayout from '../../components/Modules/MainLayout'
 import Footer from '../../components/Modules/Layout/Footer'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+
+
 export default function Regist() {
+
+    const [username, setUsername] = useState('')
+    const [password, serPassword] = useState('')
+    
     return (
         <div>
 

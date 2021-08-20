@@ -13,12 +13,7 @@ import TypeProduct from '../components/Modules/TypeProduct/TypeProduct'
 import SlickSlider from 'react-slick';
 export default function Home({ products }) {
 
-  const apolloClient = new ApolloClient({
-    uri: 'http://localhost:4000/graphql',
-    cache: new InMemoryCache(),
-    defaultOptions: defaultOptions
-
-  })
+  
   const [imgBanner, setImgBanner] = useState([
     { img: "/img/meme1.jpg" },
     { img: "/img/meme4.jpg" },
@@ -27,7 +22,7 @@ export default function Home({ products }) {
  
   return (
 
-    <ApolloProvider client={apolloClient}>
+      <>
       
           <MainLayout  className="products__products all-all-m" />
 
@@ -92,7 +87,7 @@ export default function Home({ products }) {
       </Container>
 
       <Footer/>
-    </ApolloProvider>
+      </>
   )
 }
 

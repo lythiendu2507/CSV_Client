@@ -1,10 +1,23 @@
-import React from 'react'
+import {useState} from 'react'
 import MainLayout from '../../components/Modules/MainLayout'
 import Footer from '../../components/Modules/Layout/Footer'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { LOGIN_USER, LoginData, LoginVars } from '../../graphql/user/login';
+import { useAuth } from '../../context/auth';
 
+
+  
 export default function login() {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const {signIn} = useAuth()
+
+    function onSubmit(e){
+        e.preventDefault()
+        signIn({email, password})
+    }
     return (
         <div>
 
@@ -15,20 +28,20 @@ export default function login() {
                     <span >Đăng nhập</span>
                 </div>
                 <div className="fa-border">
-                <form noValidate autoComplete="off">
+                <form noValidate autoComplete="off" onSubmit={onSubmit}>
                     <div className="item text">
-                        <TextField id="outlined-basic" label="Email hoặc số điện thoại" variant="outlined" />
+                        <TextField type="email" onChange={(e)=> setEmail(e.target.value)} id="outlined-basic" label="Email" variant="outlined" />
                     </div>
                     <div className="item">
-                        <TextField id="outlined-basic" type="password" label="Mật khẩu" variant="outlined" />
+                        <TextField id="outlined-basic" type="password"  onChange={(e)=> setPassword(e.target.value)} label="Mật khẩu" variant="outlined" />
                     </div>
 
+                    <div className="item my-5">
 
+                    <Button type="submit" className="item" variant="contained" color="primary">Đăng Nhập</Button>
+                    </div>
                 </form>
-                <div className="item my-5">
-
-                    <Button className="item" variant="contained" color="primary">Đăng Nhập</Button>
-                </div>
+                
                 </div>
                 <div>
                     <a className=" forgot-pass" href="/Forgot-pass">
