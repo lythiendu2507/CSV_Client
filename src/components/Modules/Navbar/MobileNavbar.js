@@ -1,5 +1,5 @@
 import React from 'react'
-import TypeProduct from '../TypeProduct/TypeProduct'
+
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AddIcon from '@material-ui/icons/Add';
 import SearchIcon from '@material-ui/icons/Search';
@@ -22,22 +22,30 @@ export default function MobileNavbar() {
                 </div>
             </header>
             <div className="toolbar-container" >
-                <span className="tab">
+                <a href="/">
+                <span className="tab" >
                     <HomeIcon className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill  fa-home"/>                 
                     <p className="text">Trang chủ</p>
                 </span>
+                </a>
+                <a href="/saveNews">
                 <span className="tab">
                     <SaveIcon className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill fas fa-clipboard-check"/>                   
                     <p className="text">Đã lưu</p>
                 </span>
+                </a>
+                <a href="/newManagement">
                 <span className="tab">
                     <AccountCircleIcon className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill fas fa-clipboard-check"/>                   
-                    <p className="text">Tài khoản</p>
+                    <p className="text">Quản lí tin</p>
                 </span>
+                </a>
+                <a href="/">
                 <span className="tab">
                     <NotificationsIcon className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill far fa-bell"/>             
                     <p className="text">Thông báo</p>
                 </span>
+                </a>
                 <span className="tab">
                     <AddIcon className="toolbar-iconfont toolbar-icon-my toolbar-icon-home-fill fas fa-bars"/>
                     

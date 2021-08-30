@@ -6,6 +6,11 @@ export const productCardQueryProps = `
   name
   old_price
   sale_price
+  discription
+  createAt
+  user{
+      name
+  }
   `
 
 

@@ -9,6 +9,12 @@ export const GET_PRODUCT = gql `
             id
             name
             old_price
+            sale_price
+            discription
+            createAt
+            user{
+                name
+            }
         }
     }
 `

@@ -1,40 +1,63 @@
 import Head from 'next/head'
-import React, { useState } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import Footer from '../components/Modules/Layout/Footer';
 import Link from 'next/link'
-import { Card, Typography, Container, IconButton} from '@material-ui/core';
+import { Card, Typography, Container, IconButton } from '@material-ui/core';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-
+import Button from '@material-ui/core/Button';
 import MainLayout from '../components/Modules/MainLayout'
 import { ApolloClient, InMemoryCache, ApolloProvider, useApolloClient, defaultOptions, useQuery } from '@apollo/client'
 
 import { GET_PRODUCTS } from '../graphql/getProducts/getProducts';
-import TypeProduct from '../components/Modules/TypeProduct/TypeProduct'
+import TypeProduct from './producttype/TypeProduct'
 import SlickSlider from 'react-slick';
-export default function Home({ products }) {
+import {useAppContext} from '../context/user'
 
-  
+
+export default function Home({ products }) {
+  const token = useAppContext()
+
   const [imgBanner, setImgBanner] = useState([
     { img: "/img/meme1.jpg" },
     { img: "/img/meme4.jpg" },
     { img: "/img/beaver1.jpg" },
     { img: "/icon/logo.png" }]);
- 
+
+  var d = new Date();
+  var n = d.toISOString();
+
+
+  function toDateTime(secx) {
+    var sec = secx / 1000;
+    if (sec < 60) {
+      return Math.floor(sec / 60) + ' Giây trước'
+    }
+    if (sec < 3600) {
+      return Math.floor(sec / 60) + ' Phút trước'
+    }
+    if (sec < 86400) {
+      return Math.floor(sec / 3600) + ' Giờ trước'
+    }
+    if (sec < 2629800) {
+      return Math.floor(sec / 86400) + ' Ngày trước'
+    }
+  }
+  
   return (
 
-      <>
-      
-          <MainLayout  className="products__products all-all-m" />
+    <>
+
+      <MainLayout className=" all-all-m" />
 
 
-          
-          <Container>
+
+      <Container>
         <div className="product__cards mb-3 my-4 container-main">
 
           <SlickSlider
             arrows={false}
             autoplay
-            dots ={true}
+            dots={true}
 
             dotsClass="slick__dots bullet slick-dots"
             className="align-items-center mb-0 slick-dotted img-slider-m img-slider">
@@ -55,30 +78,67 @@ export default function Home({ products }) {
           <p className="title-product"> Tin mới đăng</p>
           <div className="products container mobile-content my-3 my-sm-5">
             <div className="d-flex flex-nowrap justify-content-between">
-              {/* <div className="products__sidebar pr-4 d-none d-sm-block">
-            <div>Sản phẩm</div>
-          </div> */}
               <div className="flex-grow-1 w-100">
-                <div className="px-2 px-sm-0 mb-2"></div>
-                <div className=" products__cards mb-3 text-center pb-5 pt-5">
-                  {products.products.map((product) => (
-                    <Link className="fa-border" href={`/products/${product.id}`}>
-                      <Card key={product.id}>
-                        <img alt="/img/meme1.jpg" src="/img/meme1.jpg"/>
-                        <Typography component="h2" className="mt-1">
-                          {product.name}
-                        </Typography>
-                        <Typography component="h2">
-                          <div className="color-price-product mt-1">
-                            {product.sale_price} đ
-                          </div> 
-                        </Typography>
-                        <IconButton aria-label="add to favorites">
-                            <FavoriteIcon />
-                        </IconButton>
-                      </Card>
-                    </Link>
-                  ))}
+                <div className="products__products">
+                  <div className=" products__cards mb-3 ">
+                    {products.products.map((product) => (
+                      <>
+                      <div className="add-to-cart" >
+                                  <IconButton aria-label="add to favorites ">
+                                    <FavoriteIcon />
+                                  </IconButton>
+                                </div>
+                      <Link href={`/products/${product.id}`}>
+                        <div className="product-card-container">
+                          <article className="product-card card mx-auto">
+                            <div className="product-card__main">
+                              <div className="product-card__description mb-3">
+                                <a>
+                                  <div className="product-card__image mb-3 lozad">
+                                    <div className="banner-wrapper">
+                                      <img className="banner--image" alt="/icon/logo.png" src="/icon/logo.png" />
+                                    </div>
+                                  </div>
+                                </a>
+                                
+                                <a className="text-decoration-none">
+
+                                  <h6 className="product-card__name">{product.name}</h6>
+
+                                </a>
+                                <Typography component="h2">
+                                  <div className="color-price-product mt-1">
+                                    {product.sale_price} đ
+                                  </div>
+                                </Typography>
+                                <br/>
+                                <br/>
+                                <br/>
+                                  <Typography component="h2">
+                                    <div className="font-text-date">
+                                      Ngày đăng: {toDateTime(Date.parse(n) - Date.parse(product.createAt))}
+                                    </div>
+                                  </Typography>
+                                  <Typography component="h2">
+                                    <div className="font-text-date ">
+                                      Đăng bởi: {product.user.name}
+                                    </div>
+                                  </Typography>
+                              </div>
+                            </div>
+                            {/* <div className="text-center">
+                        <Button variant="contained" color="secondary" >
+                            Xem Thêm
+                        </Button> 
+                         
+                        </div> */}
+                            
+                          </article>
+                        </div>
+                      </Link>
+                      </>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -86,8 +146,8 @@ export default function Home({ products }) {
         </div>
       </Container>
 
-      <Footer/>
-      </>
+      <Footer />
+    </>
   )
 }
 

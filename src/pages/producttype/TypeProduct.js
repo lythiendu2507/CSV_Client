@@ -79,7 +79,7 @@ export default function TypeProduct() {
               
             </div>
           </Link>
-          <Link href={`/products/`}>
+          <Link href={`/producttype/6087e449d8b6ab382c93ff23`}>
           <div className="tp span-tp-m item-tp-m">
           <div>
           <img src="/img/typeproduct/dungcuthethao.jpg" className="img-tp-m img-tp"/>

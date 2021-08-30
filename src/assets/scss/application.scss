@@ -4953,6 +4953,7 @@ a.text-dark:focus {
   border: solid 0.08em #eee;
   border-radius: 0.1em;
   padding: 0.2em 0.25em 0.15em;
+  position: relative;
 }
 .fa-pull-left {
   float: left;
@@ -4960,60 +4961,7 @@ a.text-dark:focus {
 .fa-pull-right {
   float: right;
 }
-.fa.fa-pull-left,
-.fas.fa-pull-left,
-.fa-pull-left.check,
-.fa-pull-left.my-order__icon--completed,
-.fa-pull-left.times,
-.fa-pull-left.my-order__icon--canceled,
-.fa-pull-left.clipboard-check,
-.fa-pull-left.my-order__icon--pushing_to_erp,
-.fa-pull-left.my-order__icon--confirmed,
-.fa-pull-left.my-order__icon--to_confirm,
-.fa-pull-left.truck,
-.fa-pull-left.my-order__icon--shipping,
-.fa-pull-left.box-open,
-.fa-pull-left.my-order__icon--refunded,
-.fa-pull-left.my-order__icon--shipped,
-.fa-pull-left.my-order__icon--pushed_to_erp,
-.fa-pull-left.my-order__icon--in_cart,
-.fa-pull-left.my-order__icon--to_purchase,
-.fa-pull-left.my-order__icon--purchasing,
-.fa-pull-left.my-order__icon--to_ship,
-.fa-pull-left.testimonial__comment.quote::before,
-.fa-pull-left.testimonial__comment.quote::after,
-.far.fa-pull-left,
-.fal.fa-pull-left,
-.fab.fa-pull-left {
-  margin-right: 0.3em;
-}
-.fa.fa-pull-right,
-.fas.fa-pull-right,
-.fa-pull-right.check,
-.fa-pull-right.my-order__icon--completed,
-.fa-pull-right.times,
-.fa-pull-right.my-order__icon--canceled,
-.fa-pull-right.clipboard-check,
-.fa-pull-right.my-order__icon--pushing_to_erp,
-.fa-pull-right.my-order__icon--confirmed,
-.fa-pull-right.my-order__icon--to_confirm,
-.fa-pull-right.truck,
-.fa-pull-right.my-order__icon--shipping,
-.fa-pull-right.box-open,
-.fa-pull-right.my-order__icon--refunded,
-.fa-pull-right.my-order__icon--shipped,
-.fa-pull-right.my-order__icon--pushed_to_erp,
-.fa-pull-right.my-order__icon--in_cart,
-.fa-pull-right.my-order__icon--to_purchase,
-.fa-pull-right.my-order__icon--purchasing,
-.fa-pull-right.my-order__icon--to_ship,
-.fa-pull-right.testimonial__comment.quote::before,
-.fa-pull-right.testimonial__comment.quote::after,
-.far.fa-pull-right,
-.fal.fa-pull-right,
-.fab.fa-pull-right {
-  margin-left: 0.3em;
-}
+
 .fa-spin {
   animation: fa-spin 2s infinite linear;
 }
@@ -5048,19 +4996,7 @@ a.text-dark:focus {
   -ms-filter: 'progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)';
   transform: scale(1, -1);
 }
-.fa-flip-both,
-.fa-flip-horizontal.fa-flip-vertical {
-  -ms-filter: 'progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)';
-  transform: scale(-1, -1);
-}
-:root .fa-rotate-90,
-:root .fa-rotate-180,
-:root .fa-rotate-270,
-:root .fa-flip-horizontal,
-:root .fa-flip-vertical,
-:root .fa-flip-both {
-  filter: none;
-}
+
 .fa-stack {
   display: inline-block;
   height: 2em;
@@ -13349,4 +13285,17 @@ abbr[title] {
   font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
     background-color: rgb(239, 239, 239);
+}
+.add-to-cart{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.font-text{
+  bottom: 0;
+}
+.font-text-date{
+  font-size: 12px;
+  margin: 0 3px;
+  font-family: Arial, Helvetica, sans-serif;
 }

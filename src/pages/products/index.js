@@ -4,7 +4,7 @@ import { Card,  Typography } from '@material-ui/core';
 import { useQuery, ApolloClient, InMemoryCache, gql } from '@apollo/client';
 import { createStyles, Theme, Paper, Hidden, withWidth } from '@material-ui/core/';
 import MainLayout, { mainLayoutNamespacesRequired } from '../../components/Modules/MainLayout';
-import ProductsType from '../../components/Modules/TypeProduct/TypeProduct'
+import TypeProduct from '../producttype/TypeProduct'
 import { GET_PRODUCTS } from '../../graphql/getProducts/getProducts'
 import { GET_PRODUCTSTYPE } from '../../graphql/getTypeProducts/getTypeProducts'
 

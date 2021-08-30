@@ -1,15 +1,16 @@
-import {useState} from 'react'
+import {useState,useContext} from 'react'
 import MainLayout from '../../components/Modules/MainLayout'
 import Footer from '../../components/Modules/Layout/Footer'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { LOGIN_USER, LoginData, LoginVars } from '../../graphql/user/login';
 import { useAuth } from '../../context/auth';
-
+import {useAppContext} from '../../context/user'
 
   
 export default function login() {
-
+    const context = useAppContext()
+    console.log(context)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const {signIn} = useAuth()
@@ -49,7 +50,7 @@ export default function login() {
                     </a>
                 </div>
                 <div className="item">
-                    <span> <a className="regist"> Đăng ký </a> nếu bạn chưa có tài khoản</span>
+                    <span> <a className="regist" href="/Register"> Đăng ký </a> nếu bạn chưa có tài khoản</span>
                 </div>
 
             </div>

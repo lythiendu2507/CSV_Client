@@ -4,17 +4,24 @@ import cookies from 'js-cookie';
 import { ApolloClient, InMemoryCache, ApolloProvider, useApolloClient, 
         defaultOptions, useQuery, HttpLink ,gql} 
 from '@apollo/client'
-
+import router, { useRouter } from 'next/router'
 
 
 
 const authContext =createContext()
 
+
+
+
 export function AuthProvider({children}){
     const auth = useProviderAuth()
     return <authContext.Provider value ={auth}>
         <ApolloProvider client={auth.createApolloClient()}>
+     
         {children}
+        
+       
+        
         </ApolloProvider>
     </authContext.Provider>
 }
@@ -22,6 +29,7 @@ export function AuthProvider({children}){
 export const useAuth = () => {
     return useContext(authContext)
 }
+
 
 function useProviderAuth(){
      const [authToken , setAuthToken] = useState(null)
@@ -52,6 +60,7 @@ function useProviderAuth(){
             mutation LoginMutation($email: String!,$password: String!){
                 login(email: $email, password: $password){
                     token
+                    id
                 }
             }
             `
@@ -64,6 +73,8 @@ function useProviderAuth(){
         {
             setAuthToken(result.data.login.token)
             cookies.set('token', result.data.login.token)
+            cookies.set('userId', result.data.login.id)
+            router.push('/')
         }
     }
 

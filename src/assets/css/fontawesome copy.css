@@ -78,7 +78,9 @@
 .fa-border {
   border: solid 0.08em #eee;
   border-radius: .1em;
-  padding: .2em .25em .15em; }
+  padding: .2em .25em .15em; 
+  position: relative;
+}
 
 .fa-pull-left {
   float: left; }

@@ -5,14 +5,16 @@ import '../styles/globals.css'
 import '../assets/scss/custom-styles.scss';
 import '../assets/scss/toast.scss';
 import { AuthProvider } from '../context/auth';
+import { AppWrapper } from '../context/user';
 
 
- 
 function MyApp({ Component, pageProps }) {
   return (
-  <AuthProvider>
-    <Component {...pageProps} />
-  </AuthProvider>)
+    <AuthProvider>
+      <AppWrapper>
+        <Component {...pageProps} />
+      </AppWrapper>
+    </AuthProvider>)
 }
 
 export default MyApp
