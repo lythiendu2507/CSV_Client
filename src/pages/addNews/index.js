@@ -69,7 +69,7 @@ export default function AddNews() {
 
 
     const [addproduct] = useMutation(ADD_PRODUCT)
-
+    
 
 
     const classes = useStyles()

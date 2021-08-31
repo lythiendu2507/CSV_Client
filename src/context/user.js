@@ -29,6 +29,7 @@ export function AppWrapper({ children }) {
      const token ='token'
     setUserId(jwt_decode(getCookie(token)))
    }
+   
  }, [])
   
    return (
