@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link'
-import { Drawer, IconButton } from '@material-ui/core';
+import { Divider, Drawer, IconButton } from '@material-ui/core';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AddIcon from '@material-ui/icons/Add';
 import SearchIcon from '@material-ui/icons/Search';
@@ -33,7 +33,7 @@ const Header = () => {
 
     return (
         <header className='pc-header'>
-            <div className="pc-header-menu">
+            <div className="pc-header-menu  ">
                 <div className="pc-header-menu-logo">
                     <a className="pc-header-menu-logo-a" href="/">
                         <img className="pc-header-menu-logo-image" src="/icon/logo-home.png" />
@@ -43,42 +43,52 @@ const Header = () => {
                 <div className="pc-header-menu-right">
                     <div className="pc-header-menu-right-item1">
                         <div>
-                            <a className="pc-header-menu-right-item1-a">
+                            <Link href="/">
+                            <div className="pc-header-menu-right-item1-a header__text">
                                 <NotificationsIcon />
                                 <span>  Thông Báo</span>
-                            </a>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                     <div className="pc-header-menu-right-item1">
                         <div>
-                            <a className="pc-header-menu-right-item1-a" href="/saveNews">
+                            <Link href="/saveNews" >
+                            <div className="pc-header-menu-right-item1-a header__text" >
                                 <SaveIcon />
                                 <span>  Tin Đã Lưu</span>
-                            </a>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                     <div className="pc-header-menu-right-item1">
                         <div>
-                            <a className="pc-header-menu-right-item1-a" href="/newManagement">
+                            <Link href="/newManagement" >
+                            <div className="pc-header-menu-right-item1-a header__text" >
                                 <EventNoteIcon />
                                 <span>  Quản lí Tin</span>
-                            </a>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                     <div className="pc-header-menu-right-item1">
                         <div>
-                            <a className="pc-header-menu-right-item1-a" href="/addNews">
+                            <Link href="/addNews" >
+                            <div className="pc-header-menu-right-item1-a header__text" >
                                 <FiberNewIcon />
                                 <span>  Đăng tin mới</span>
-                            </a>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                     <div className="pc-header-menu-right-item1">
                         <div>
-                            <a className="pc-header-menu-right-item1-a" href="/">
+                            <Link  href="/" >
+                            <div className="pc-header-menu-right-item1-a header__text">
                                 <HomeIcon />
                                 <span>  Trang Chủ</span>
-                            </a>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -108,9 +118,9 @@ const Header = () => {
                         (
                     <div>
                      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                     <div className="pc-header-search-item2">
-                        <div className="pc-header-search-item2-1">
-                            <div className="pc-header-search-item2-a">
+                     <div className="pc-header-search-item2 ">
+                        <div className="pc-header-search-item2-email">
+                            <div className="pc-header-search-item2-a header__text pc-header-email">
                                 <AccountCircleIcon className="" />
                                 <span className="pc-header-search-item2-span"> {token.email}</span>
                             </div>
@@ -134,20 +144,28 @@ const Header = () => {
                     </div>) :
 
                         (<><div className="pc-header-search-item2">
-                            <div className="pc-header-search-item2-1">
-                                <a href="/Login" className="pc-header-search-item2-a">
+                            <div className="pc-header-search-item2-email">
+                            <div className="pc-header-search-item2-a header__text pc-header-email">
+                                <Link href="/Login" >
+                                    <>
                                     <AccountCircleIcon className="" />
                                     <span className="pc-header-search-item2-span"> Đăng Nhập</span>
-                                </a>
+                                    </>
+                                </Link>
+                                </div>
                             </div>
                         </div>
                             <div className="pc-header-search-item3">
                                 <div>
                                     <div className="pc-header-search-item2-2">
-                                        <a href="/Register" className="pc-header-search-item2-a">
+                                    <div className="pc-header-search-item2-a header__text pc-header-email">
+                                        <Link href="/Register" >
+                                        <>
                                             <AddIcon className="" />
                                             <span className="pc-header-search-item2-span"> Đăng ký</span>
-                                        </a>
+                                            </>
+                                        </Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div> </>)}

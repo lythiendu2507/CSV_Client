@@ -6,6 +6,7 @@ export const GET_USERBYID = gql`
    query user($id: ID!) {
     user(id: $id) {
       name
+      phone
       createAt
       products{
         id

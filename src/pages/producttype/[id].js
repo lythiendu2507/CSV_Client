@@ -23,7 +23,7 @@ const ProductType = ({ producttypes }) => {
   }, []);
   var d = new Date();
   var n = d.toISOString();
-  console.log(producttypes.products)
+  //console.log(producttypes.products)
 
   const [imgBanner, setImgBanner] = useState([
     { img: "/img/meme1.jpg" },
@@ -89,30 +89,29 @@ const ProductType = ({ producttypes }) => {
               <div className="products__products">
                 <div className=" products__cards mb-3 ">
                   {producttypes.products.map((product) => (
-                    <>
-                    <div className="add-to-cart" >
-                                <IconButton aria-label="add to favorites ">
-                                  <FavoriteIcon />
-                                </IconButton>
-                              </div>
-                    <Link href={`/products/${product.id}`}>
+                    <div>
+                      
+                      
                       <div className="product-card-container">
                         <article className="product-card card mx-auto">
                           <div className="product-card__main">
                             <div className="product-card__description mb-3">
-                              <a>
+                            
+                              <Link  href={`/products/${product.id}`}>
                                 <div className="product-card__image mb-3 lozad">
                                   <div className="banner-wrapper">
-                                    <img className="banner--image" alt="/icon/logo.png" src="/icon/logo.png" />
+                                    <img className="banner--image" alt={product.image_256} src={product.image_256} />
                                   </div>
                                 </div>
-                              </a>
+                              </Link>
                               
-                              <a className="text-decoration-none">
+                              <Link  href={`/products/${product.id}`} className="text-decoration-none">
 
                                 <h6 className="product-card__name">{product.name}</h6>
 
-                              </a>
+                              </Link>
+                              <Link  href={`/products/${product.id}`}>
+                              <div>
                               <Typography component="h2">
                                 <div className="color-price-product mt-1">
                                   {product.sale_price} đ
@@ -131,14 +130,27 @@ const ProductType = ({ producttypes }) => {
                                     Đăng bởi: {product.user.name}
                                   </div>
                                 </Typography>
+                                </div>
+                                </Link>
+
+                                <div className="add-to-cart" >
+                                <IconButton aria-label="add to favorites ">
+                                  <FavoriteIcon />
+                                </IconButton>
+                            </div>
                             </div>
                           </div>
-                          
+                          {/* <div className="text-center">
+                      <Button variant="contained" color="secondary" >
+                          Xem Thêm
+                      </Button> 
+                       
+                      </div> */}
                           
                         </article>
                       </div>
-                    </Link>
-                    </>
+                    
+                    </div>
                   ))}
                 </div>
               </div>

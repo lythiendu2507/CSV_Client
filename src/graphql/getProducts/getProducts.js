@@ -8,6 +8,7 @@ export const productCardQueryProps = `
   sale_price
   discription
   createAt
+  image_256
   user{
       name
   }

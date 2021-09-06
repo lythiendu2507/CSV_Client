@@ -50,7 +50,7 @@ const Products = ({ product }) => {
                   <div className="col-md-6">
                     <div className="product__image">
                       <div className="product-img-magnifier">
-                        <img className="product-img-magnifier" alt="/icon/logo.png" src="/icon/logo.png" />
+                        <img className="product-img-magnifier" alt={product.image_256} src={product.image_256} />
                       </div>
                     </div>
 
@@ -91,6 +91,9 @@ const Products = ({ product }) => {
                          
                         </div>
                         <div className="font-text-date">
+                          <br/>
+                          <span>Số điện thoại: {user.phone}</span>
+                         
                           <br/>
                           <span>Đăng bởi: {user.name}</span>
                           <br />

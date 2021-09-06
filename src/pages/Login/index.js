@@ -10,7 +10,7 @@ import {useAppContext} from '../../context/user'
   
 export default function login() {
     const context = useAppContext()
-    console.log(context)
+    //console.log(context)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const {signIn} = useAuth()

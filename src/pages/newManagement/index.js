@@ -26,7 +26,7 @@ export default function saveNews() {
     if (loading) return null;
     if (error) return `Error! ${error}`;
 
-    console.log(data.user.products)
+    //console.log(data.user.products)
 
     return (
         <div>

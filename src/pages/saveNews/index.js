@@ -32,7 +32,7 @@ export default function saveNews() {
     // }, [])
 
     // console.log(user.user)
-    console.log(data.user.products)
+    //console.log(data.user.carts)
 
     return (
         <div>
@@ -51,14 +51,14 @@ export default function saveNews() {
                         <div className="col-12 col-md-9 col-lg-9">
 
                             <div className="elevated cart__items mb-3">
-                                {!user.carts == null ? (
+                                {user.carts == null ? (
                                     <div>
-                                        {data.user.carts.map((user) => (
+                                        {data.user.carts.map((cart) => (
                                             <div>
                                                 {
 
                                                     <div className="cart-item " >
-                                                        <Link href={'products/' + user.id}>
+                                                        <Link href={'products/' + cart.product.id}>
                                                             <div className="row align-items-center px-2 ">
                                                                 <div
                                                                     className="cart-item__image lozadloaded flex-shrink-0 discount__quick-order"
@@ -71,9 +71,9 @@ export default function saveNews() {
                                                                 <div className="flex-1 pl-2 pr-2 ">
                                                                     <div className="d-flex align-items-center ">
                                                                         <div>
-                                                                            <Link href={'products/' + user.id}>
-                                                                                <a className="cart-item__name" title={user.name}>
-                                                                                    {user.name}
+                                                                            <Link href={'products/' + cart.product.id}>
+                                                                                <a className="cart-item__name" title={cart.product.name}>
+                                                                                    {cart.product.name}
                                                                                 </a>
                                                                             </Link>
                                                                         </div>
@@ -85,12 +85,12 @@ export default function saveNews() {
                                                                                 <div>
                                                                                     <div className="product__price-group mb-1">
                                                                                         <span className="product__price">
-                                                                                            <span>Giá: {user.sale_price}</span>
+                                                                                            <span>Giá: {cart.product.sale_price}</span>
                                                                                         </span>
 
 
                                                                                         <span className="product__old-price ml-3">
-                                                                                            <span>Giá hàng mới: {user.old_price}</span>
+                                                                                            <span>Giá hàng mới: {cart.product.old_price}</span>
                                                                                         </span>
 
                                                                                     </div>

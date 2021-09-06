@@ -28,6 +28,7 @@ export default function AddNews() {
      const [old_price, setOldPrice] = useState('')
      const [name, setName] = useState('')
      const [discription, setDiscription] = useState('')
+     const [image_256, setImage_256] = useState('')
 
     const [newProduct, setNewProduct] = useState({
         producttypeId:''
@@ -53,7 +54,8 @@ export default function AddNews() {
                 name: name,
                 old_price: old_price,
                 sale_price: sale_price,
-                discription: discription
+                discription: discription,
+                image_256:image_256
 
             }
         })
@@ -61,10 +63,13 @@ export default function AddNews() {
     }
     const producttypes = [
         { name: "Đồ dùng học tập", id: "6087e449d8b6ab382c93ff23" },
-        { name: "Sách,  truyện", id: "" },
+        { name: "Sách,  truyện", id: "612f43a5fd81ee359c6e1e48" },
         { name: "Đồ dùng vệ sinh", id: "6087e828d8b6ab382c93ff2a" },
-        { name: "đồ dùng thể thao", id: "" },
-        { name: "Đồ dùng điện tử", id: "" }
+        { name: "Đồ dùng thể thao", id: "612f438cfd81ee359c6e1e47" },
+        { name: "Thiết bị giải trí", id: "612f43effd81ee359c6e1e49" },
+        { name: "Thiết bị gia dụng", id: "612f438cfd81ee359c6e1e47" },
+        { name: "Đồ dùng điện tử", id: "612f4461fd81ee359c6e1e4a" },
+        { name: "Khóa học online", id: "612f4479fd81ee359c6e1e4b" },
     ]
 
 
@@ -83,7 +88,7 @@ export default function AddNews() {
 
                         <div className="form-regist ">
                             <div className="item footer__header mb-3">
-                                <span >Đăng ký</span>
+                                <span >Đăng tin mới</span>
                             </div>
                             <div className="fa-border">
                                 <form noValidate autoComplete="off" onSubmit={onSubmit}>
@@ -96,8 +101,11 @@ export default function AddNews() {
                                     <div className="item text">
                                         <TextField id="outlined-basic"   onChange={(event)=>setOldPrice(event.target.value)} label="Giá sản phẩm mới" variant="outlined" />
                                     </div>
+                                    <div className="item text">
+                                        <TextField id="outlined-basic"   onChange={(event)=>setImage_256(event.target.value)} label="Điền đường dẫn ảnh " variant="outlined" />
+                                    </div>
 
-                                    <div className="item text ">
+                                    <div className="item text add-news_combobox-m add-news_combobox-p">
 
                                         <Form.Control
                                             as='select'
@@ -129,20 +137,18 @@ export default function AddNews() {
                                         /> */}
                                     </div>
                                     <div className="item text ">
-                                        <form className={classes.root} noValidate autoComplete="off">
-
-                                            <TextField id="outlined-basic"   onChange={(event)=>setDiscription(event.target.value)} label="Mô tả sản phẩm" variant="outlined" />
+                                        <form noValidate autoComplete="off">
+                                            <span className="add-news_span add-news_span">Mô tả sản phẩm</span>
+                                            <textarea className="form-control" label="Mô tả sản phẩm " onChange={(event)=>setDiscription(event.target.value)}></textarea>
+                                            {/* <TextField id="outlined-basic"   onChange={(event)=>setDiscription(event.target.value)} label="Mô tả sản phẩm" variant="outlined" /> */}
                                         </form>
                                     </div>
                                     <div className="item my-5">
-                                        <Button className="item" variant="contained" type="submit" color="primary">Đăng Ký</Button>
+                                        <Button className="item" variant="contained" type="submit" color="primary">Đăng tin</Button>
                                     </div>
                                 </form>
                             </div>
 
-                            <div className="item">
-                                <span> <a className="regist" href="/Login"> Đăng nhập </a> nếu bạn đã có tài khoản</span>
-                            </div>
 
                         </div>
                         <Footer />

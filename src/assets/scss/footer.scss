@@ -1,10 +1,10 @@
 .footer {
-  background: rgb(255, 78, 34);
+  background: #2f3b97;
   color: #fff;
   padding-top: 6em;
   position: relative;
   .text-primary {
-    color: $blue3 !important;
+    color: $orange !important;
   }
   &:before {
     height: 2rem;
@@ -12,13 +12,13 @@
     right: 0;
     top: 0;
     position: absolute;
-    background-color: $blue3;
+    background-color: $orange;
     content: '';
   }
 }
 .footer__header {
   text-transform: uppercase;
-  color: $blue3;
+  color: $orange;
   font-weight: bold;
 }
 .footer__info-title {
@@ -40,7 +40,7 @@
   width: fit-content;
 }
 .footer__link:hover {
-  color: $blue3;
+  color: $orange;
 }
 .footer__link--email {
   // border-right: 1px solid rgba(145, 154, 163, 0.822);
@@ -71,7 +71,7 @@
   color: white;
 }
 .footer__icon--email {
-  background: $blue3;
+  background: $orange;
 }
 .footer__app {
   position: relative;
@@ -100,7 +100,7 @@
   justify-content: center;
 }
 .footer .version {
-  color: #192159;
+  color: #f7a30a;
   padding-left: 0.5rem;
 }
 @media (max-width: 575.98px) {

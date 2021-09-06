@@ -13299,3 +13299,20 @@ abbr[title] {
   margin: 0 3px;
   font-family: Arial, Helvetica, sans-serif;
 }
+@media (min-width: 801px) {
+  .add-news_combobox-m{
+    width: 25%;
+    display: inline-block;
+  }
+}
+@media (max-width: 800px) {
+  .add-news_combobox-p{
+    width: 50%;
+    display: inline-block;
+  }
+}
+
+.add-news_span{
+  float:left;
+  margin-bottom: 5px;
+}
