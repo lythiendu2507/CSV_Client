@@ -11,6 +11,7 @@ export const productCardQueryProps = `
   image_256
   user{
       name
+      phone
   }
   `
 

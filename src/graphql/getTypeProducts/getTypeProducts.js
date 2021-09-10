@@ -14,11 +14,13 @@ query getTypeProducts{
                 id
                 name
                 old_price
+                image_256
                 sale_price
                 discription
                 createAt
                 user { 
                         name
+                        phone
                 }
       }
         }

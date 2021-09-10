@@ -12,7 +12,6 @@ export default function saveNews() {
     const token = useAppContext()
     const [userId, setUserId] = useState('')
     const [user, setUser] = useState('')
-
     useEffect(() => {
         if (token) {
             setUserId(token.id)
@@ -37,7 +36,8 @@ export default function saveNews() {
     return (
         <div>
             <MainLayout />
-
+            <title>WebSinhVien - Tin đã lưu</title>
+            
            {token ?
             (
             <div className="container py-5 quickOrder">
@@ -51,7 +51,7 @@ export default function saveNews() {
                         <div className="col-12 col-md-9 col-lg-9">
 
                             <div className="elevated cart__items mb-3">
-                                {user.carts == null ? (
+                                {user.carts === null ? (
                                     <div>
                                         {data.user.carts.map((cart) => (
                                             <div>
@@ -111,7 +111,9 @@ export default function saveNews() {
                                         }
                                     </div>) :
                                     (<div>
+                                   
                                         <span>Bạn chưa có sản phẩm nào trong giỏ hàng</span>
+                                       
                                     </div>)}
 
                             </div>

@@ -23,7 +23,7 @@ export default function login() {
         <div>
 
             <MainLayout />
-
+            <title>WebSinhVien - Đăng nhập</title>
             <div className="form-login ">
                 <div className="item footer__header mb-3">
                     <span >Đăng nhập</span>

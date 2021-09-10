@@ -147,10 +147,10 @@ const Header = () => {
                             <div className="pc-header-search-item2-email">
                             <div className="pc-header-search-item2-a header__text pc-header-email">
                                 <Link href="/Login" >
-                                    <>
+                                    <div>
                                     <AccountCircleIcon className="" />
                                     <span className="pc-header-search-item2-span"> Đăng Nhập</span>
-                                    </>
+                                    </div>
                                 </Link>
                                 </div>
                             </div>
@@ -160,10 +160,10 @@ const Header = () => {
                                     <div className="pc-header-search-item2-2">
                                     <div className="pc-header-search-item2-a header__text pc-header-email">
                                         <Link href="/Register" >
-                                        <>
+                                        <div>
                                             <AddIcon className="" />
                                             <span className="pc-header-search-item2-span"> Đăng ký</span>
-                                            </>
+                                            </div>
                                         </Link>
                                         </div>
                                     </div>

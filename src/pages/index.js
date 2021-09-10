@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Footer from '../components/Modules/Layout/Footer';
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { Card, Typography, Container, IconButton } from '@material-ui/core';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Button from '@material-ui/core/Button';
@@ -11,7 +12,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, useApolloClient, defaultOp
 import { GET_PRODUCTS } from '../graphql/getProducts/getProducts';
 import TypeProduct from './producttype/TypeProduct'
 import SlickSlider from 'react-slick';
-import {useAppContext} from '../context/user'
+import { useAppContext } from '../context/user'
 
 
 export default function Home({ products }) {
@@ -42,11 +43,11 @@ export default function Home({ products }) {
       return Math.floor(sec / 86400) + ' Ngày trước'
     }
   }
-  
+
   return (
 
     <>
-
+      <title>WebSinhVien</title>
       <MainLayout className=" all-all-m" />
 
 
@@ -83,54 +84,61 @@ export default function Home({ products }) {
                   <div className=" products__cards mb-3 ">
                     {products.products.map((product) => (
                       <div>
-                      
-                      
+
+
                         <div className="product-card-container">
                           <article className="product-card card mx-auto">
                             <div className="product-card__main">
                               <div className="product-card__description mb-3">
-                              
-                                <Link  href={`/products/${product.id}`}>
+
+                                <Link href={`/products/${product.id}`}>
                                   <div className="product-card__image mb-3 lozad">
                                     <div className="banner-wrapper">
                                       <img className="banner--image" alt={product.image_256} src={product.image_256} />
                                     </div>
                                   </div>
                                 </Link>
-                                
-                                <Link  href={`/products/${product.id}`} className="text-decoration-none">
+
+                                <Link href={`/products/${product.id}`} className="text-decoration-none">
 
                                   <h6 className="product-card__name">{product.name}</h6>
-
+                              
                                 </Link>
+                                {token ? (<Link href={`/products/${product.id}`}>
+                                  <div>
+                                    <Typography component="h2">
+                                      <div className="color-price-product mt-1">
+                                        Giá: {product.sale_price} đ
+                                      </div>
+                                    </Typography>
+                                  </div>
+                                </Link>): (<div>
+                                  <h6 className="font-text-date">Đăng nhập để hiện mục này</h6>
+                                </div>)}
+                                
                                 <Link  href={`/products/${product.id}`}>
-                                <div>
-                                <Typography component="h2">
-                                  <div className="color-price-product mt-1">
-                                    {product.sale_price} đ
+                                  <div>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <Typography component="h2">
+                                      <div className="font-text-date">
+                                        Ngày đăng: {toDateTime(Date.parse(n) - Date.parse(product.createAt))}
+                                      </div>
+                                    </Typography>
+                                    <Typography component="h2">
+                                      <div className="font-text-date ">
+                                        Đăng bởi: {product.user.name}
+                                      </div>
+                                    </Typography>
                                   </div>
-                                </Typography>
-                                <br/>
-                                <br/>
-                                <br/>
-                                  <Typography component="h2">
-                                    <div className="font-text-date">
-                                      Ngày đăng: {toDateTime(Date.parse(n) - Date.parse(product.createAt))}
-                                    </div>
-                                  </Typography>
-                                  <Typography component="h2">
-                                    <div className="font-text-date ">
-                                      Đăng bởi: {product.user.name}
-                                    </div>
-                                  </Typography>
-                                  </div>
-                                  </Link>
+                                </Link>
 
-                                  <div className="add-to-cart" >
+                                <div className="add-to-cart" >
                                   <IconButton aria-label="add to favorites ">
                                     <FavoriteIcon />
                                   </IconButton>
-                              </div>
+                                </div>
                               </div>
                             </div>
                             {/* <div className="text-center">
@@ -139,10 +147,10 @@ export default function Home({ products }) {
                         </Button> 
                          
                         </div> */}
-                            
+
                           </article>
                         </div>
-                      
+
                       </div>
                     ))}
                   </div>

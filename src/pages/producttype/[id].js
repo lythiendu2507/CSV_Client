@@ -11,10 +11,11 @@ import SlickSlider from 'react-slick';
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import TypeProduct  from './TypeProduct';
+import { useAppContext } from '../../context/user';
 
 
 const ProductType = ({ producttypes }) => {
-    
+  const token = useAppContext()
   const [product, setProduct] = useState({})
   useEffect(() => {
     if (producttypes) {
@@ -60,7 +61,7 @@ const ProductType = ({ producttypes }) => {
 
     <Container>
       <div className="product__cards mb-3 my-4 container-main">
-
+      <title>WebSinhVien - {producttypes.name}</title>
         <SlickSlider
           arrows={false}
           autoplay
@@ -110,27 +111,35 @@ const ProductType = ({ producttypes }) => {
                                 <h6 className="product-card__name">{product.name}</h6>
 
                               </Link>
-                              <Link  href={`/products/${product.id}`}>
-                              <div>
-                              <Typography component="h2">
-                                <div className="color-price-product mt-1">
-                                  {product.sale_price} đ
-                                </div>
-                              </Typography>
-                              <br/>
-                              <br/>
-                              <br/>
-                                <Typography component="h2">
-                                  <div className="font-text-date">
-                                    Ngày đăng: {toDateTime(Date.parse(n) - Date.parse(product.createAt))}
+                              
+                                {token ? (<Link href={`/products/${product.id}`}>
+                                  <div>
+                                    <Typography component="h2">
+                                      <div className="color-price-product mt-1">
+                                       Giá: {product.sale_price} đ
+                                      </div>
+                                    </Typography>
                                   </div>
-                                </Typography>
-                                <Typography component="h2">
-                                  <div className="font-text-date ">
-                                    Đăng bởi: {product.user.name}
+                                </Link>): (<div>
+                                  <h6 className="font-text-date">Đăng nhập để hiện mục này</h6>
+                                </div>)}
+                                
+                                <Link  href={`/products/${product.id}`}>
+                                  <div>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <Typography component="h2">
+                                      <div className="font-text-date">
+                                        Ngày đăng: {toDateTime(Date.parse(n) - Date.parse(product.createAt))}
+                                      </div>
+                                    </Typography>
+                                    <Typography component="h2">
+                                      <div className="font-text-date ">
+                                        Đăng bởi: {product.user.name}
+                                      </div>
+                                    </Typography>
                                   </div>
-                                </Typography>
-                                </div>
                                 </Link>
 
                                 <div className="add-to-cart" >

@@ -85,7 +85,7 @@ export default function AddNews() {
                 (
                     <div>
                         <MainLayout />
-
+                        <title>WebSinhVien - Đăng tin</title>
                         <div className="form-regist ">
                             <div className="item footer__header mb-3">
                                 <span >Đăng tin mới</span>
@@ -154,7 +154,12 @@ export default function AddNews() {
                         <Footer />
                     </div>
                 )
-                : (<div></div>)
+                : (<div> <MainLayout />
+                    <div className="form-regist ">
+                    <p>Bạn phải <a href="/Login">đăng nhập</a> để thực hiện dịch vụ này!!</p>
+                    </div>
+                    <Footer />
+                </div>)
 
             }
 

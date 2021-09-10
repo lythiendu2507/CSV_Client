@@ -34,7 +34,7 @@ export default function Regist() {
         <div>
 
             <MainLayout />
-
+            <title>WebSinhVien - Đăng ký</title>
             <div className="form-regist ">
                 <div className="item footer__header mb-3">
                     <span >Đăng ký</span>
